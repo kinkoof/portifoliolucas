@@ -22,5 +22,6 @@ def Cadastro(request):
         return HttpResponse("Usuario cadastrado com sucesso")
         
 
+
 def Login(request):
     return render(request, 'usuarios/login')

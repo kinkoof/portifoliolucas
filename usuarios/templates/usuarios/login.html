@@ -10,8 +10,17 @@
     <div class="lista">
         <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
         <div class="item">
-
-        <DIV style="color: aliceblue;">LOGIN</DIV>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" placeholder="Username" name="nome">
+                    <br>
+                    <input type="email" placeholder="Email" name="email">
+                    <br>
+                    <input type="password" placeholder="Senha" name="senha">
+                    <br>
+                    <input type="submit" value="cadastrar">
+                    <br>
+            </form>
                 
 
         </div>
