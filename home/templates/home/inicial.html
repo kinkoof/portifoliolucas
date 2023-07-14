@@ -1,0 +1,36 @@
+{% extends 'home/main.html' %}
+
+
+{% block content %}
+{% load static %}
+{% block title%} Lucas Ferrari {% endblock %}
+<link rel="stylesheet" href="{% static 'css/inicial.css' %}">
+
+
+<div class="divall">
+
+    <img src="{% static 'images/perfil.jpg' %}" alt="Foto de Lucas">
+
+    <div class="divtxt">
+        <h2 class="sobremim">
+            Sobre mim
+        </h2>
+        <hr />
+
+        <p class="resumo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ipsum nostrum deserunt debitis, illum officia
+            possimus neque repudiandae harum, aspernatur, consectetur fugiat quasi dicta quaerat adipisci expedita
+            placeat culpa labore.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur risus vel
+            ultricies dapibus. Phasellus fermentum mauris nec sapien pulvinar, a aliquet enim tristique. Integer tempor
+            neque a sapien semper, vel rhoncus est aliquam. Fusce non tellus eget mauris semper dignissim a in lacus.
+            Duis sed vulputate risus. Aliquam nec nibh consequat, interdum nulla ut, ultricies sapien. Maecenas rutrum
+            risus vel mauris ultrices gravida. Praesent fermentum turpis vel tempor porttitor. Integer mattis, eros id
+            gravida scelerisque, leo quam rutrum erat, et varius urna nisi sed mauris. Etiam tincidunt facilisis neque,
+            ut aliquam dui lacinia in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+            Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam
+            vel lectus purus. Phasellus mattis sapien ac lectus dignissim, ut volutpat dolor feugiat.
+
+        </p>
+    </div>
+</div>
+{% endblock content %}

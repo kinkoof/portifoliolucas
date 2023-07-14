@@ -1,0 +1,59 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block title%} {{projeto.titulo}} {% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/projeto.css' %}">
+
+<div class="center-lista">
+    <div class="lista">
+        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
+        <div class="item">
+            <span><a href="#">{{projeto.titulo}}</a></span>
+            <hr>
+            <p class="descricao">{{projeto.descricao}}</p>
+        </div>
+    </div>
+</div>
+
+{% if user.is_user.is_superuser %}
+
+    <a href="edit/{{projeto.id}}">
+        <button class="button" type="button">
+            <span class="button__text">editar tarefa</span>
+            <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
+        </button>
+    </a>
+
+    <a href="excluir/{{projeto.id}}">
+        <button class="button" type="button">
+            <span class="button__text">excluir tarefa</span>
+            <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
+        </button>
+    </a>
+
+{% endif %}
+
+
+
+<style>
+    .bemvindo::after {
+        --move1: inset(50% 50% 50% 50%);
+        --move2: inset(31% 0 40% 0);
+        --move3: inset(39% 0 15% 0);
+        --move4: inset(45% 0 40% 0);
+        --move5: inset(45% 0 6% 0);
+        --move6: inset(14% 0 61% 0);
+        clip-path: var(--move1);
+        content: 'PROJETOS';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+</style>
+
+{% endblock content %}

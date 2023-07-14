@@ -1,0 +1,46 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block title%} NOVO PROJETO {% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/novoprojeto.css' %}">
+
+<div class="center-lista">
+    <div class="lista">
+        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
+        <div class="item">
+            <span>adicione a nova tarefa:</span>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Criar Tarefa">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<style>
+    .bemvindo::after {
+        --move1: inset(50% 50% 50% 50%);
+        --move2: inset(31% 0 40% 0);
+        --move3: inset(39% 0 15% 0);
+        --move4: inset(45% 0 40% 0);
+        --move5: inset(45% 0 6% 0);
+        --move6: inset(14% 0 61% 0);
+        clip-path: var(--move1);
+        content: 'PROJETOS';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+</style>
+
+{% endblock content %}

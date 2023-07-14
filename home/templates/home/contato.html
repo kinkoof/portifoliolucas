@@ -1,0 +1,53 @@
+{% extends 'home/main.html' %}
+
+{% block content %}
+{% load static %}
+{% block title%} Contatos {% endblock %}
+<link rel="stylesheet" href="{% static 'css/contato.css' %}">
+
+
+<div class="cards">
+    <div>
+        <div class="card">
+            <span class="inf">TELEFONE</span>
+            <span class="infoculta"><a href="tel:+5512996752498">(12)9675-2498</a></span>
+        </div>
+        <div class="card">
+            <span class="inf">GITHUB</span>
+            <span class="infoculta"><a href="https://github.com/kinkoof">github.com/kinkoof</a></span>
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <span class="inf">E-MAIL</span>
+            <span class="infoculta"><a
+                    href="mailto:lucasdesouzaferrari@gmail.com">lucasdesouzaferrari@gmail.com</a></span>
+        </div>
+        <div class="card">
+            <span class="inf">LINKEDIN</span>
+            <span class="infoculta"><a
+                    href="https://www.linkedin.com/in/lucas-ferrari13/">linkedin.com/in/lucas-ferrari13/</a></span>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bemvindo::after {
+        --move1: inset(50% 50% 50% 50%);
+        --move2: inset(31% 0 40% 0);
+        --move3: inset(39% 0 15% 0);
+        --move4: inset(45% 0 40% 0);
+        --move5: inset(45% 0 6% 0);
+        --move6: inset(14% 0 61% 0);
+        clip-path: var(--move1);
+        content: 'CONTATO';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+</style>
+{% endblock content %}

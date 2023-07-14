@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<header>
+    <a href="{% url 'inicial' %}">
+        <h1 class="bemvindo">{{nome_pagina}}</h1>
+    </a>
+
+    <ul class="listHeader">
+
+        <a href="{% url 'contato' %}">
+            <button class="btn">
+                <span >contato</span><i></i>
+            </button>
+        </a>
+
+        <a href="{% url 'projetos' %}">
+            <button class="btn">
+                <span >projetos</span><i></i>
+            </button>
+        </a>
+
+        <a href="{% url 'todo' %}">
+            <button class="btn">
+                <span >TO DO</span><i></i>
+            </button>
+        </a>
+
+    </ul>
+</header>
+
+
+<body>
+    {% block content %}
+    <!-- conteudo vai aparecer aq-->
+    {% endblock %}
+</body>
+
+</html>

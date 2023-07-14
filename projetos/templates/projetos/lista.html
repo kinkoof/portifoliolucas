@@ -1,0 +1,62 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block title%} Projetos {% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/lista.css' %}">
+
+<div class="center-lista">
+    <div class="lista">
+
+        {% for projeto in projetos%}
+        <div class="item">
+            <span><a href="projeto/{{projeto.id}}">{{projeto.titulo}}</a></span>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if user.is_superuser %}
+    <a href="novoprojeto/">
+    <button class="button" type="button">
+        <span class="button__text">adicionar</span>
+        <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
+    </button>
+    </a>
+{% endif %}
+
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li>{{message}}</li>
+
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+
+<style>
+    .bemvindo::after {
+        --move1: inset(50% 50% 50% 50%);
+        --move2: inset(31% 0 40% 0);
+        --move3: inset(39% 0 15% 0);
+        --move4: inset(45% 0 40% 0);
+        --move5: inset(45% 0 6% 0);
+        --move6: inset(14% 0 61% 0);
+        clip-path: var(--move1);
+        content: 'PROJETOS';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+</style>
+
+{% endblock content %}
