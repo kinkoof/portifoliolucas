@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
+#parte do cadastro
 def Cadastro(request):
     if request.method == "GET":
         return render(request, 'usuarios/cadastro.html')
