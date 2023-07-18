@@ -4,27 +4,32 @@
 
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/projeto.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
         <div class="item">
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
-                    <input type="text" placeholder="Username" name="nome">
-                    <br>
-                    <input type="email" placeholder="Email" name="email">
+
+                    <input type="text" placeholder="Usuario" name="nome">
                     <br>
                     <input type="password" placeholder="Senha" name="senha">
                     <br>
-                    <input type="submit" value="cadastrar">
+                    <input type="submit" value="login">
                     <br>
+
             </form>
-                
+            <div>
+                <a href="{% url 'cadastro' %}"><button>fazer cadastro </button></a>
+            </div>
 
         </div>
     </div>
+
+    
+
 </div>
 
 
@@ -39,7 +44,7 @@
         --move5: inset(45% 0 6% 0);
         --move6: inset(14% 0 61% 0);
         clip-path: var(--move1);
-        content: 'CADASTRO';
+        content: 'LOGIN';
         position: absolute;
         top: 0;
         left: 0;

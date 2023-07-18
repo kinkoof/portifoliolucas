@@ -4,7 +4,6 @@
   align-items: center;
 }
 
-
 .card {
   display: flex;
   flex-direction: column;
@@ -15,20 +14,18 @@
   width: 20vw;
   margin-left: 2vw;
   margin-top: 2vw;
-  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-color: linear-gradient(-45deg, #ff00c1, #9600ff, #4900ff, #00b8ff, #00fff9);
   --border-width: .2em;
-  --curve-size: .0em;
+  --curve-size: 0em;
   --blur: 30px;
-  --bg: #080312;
+  --bg: #222222;
   --color: #afffff;
   color: var(--color);
   /* use position: relative; so that BG is only for .card */
   position: relative;
   isolation: isolate;
-  font-size: 17px;
-  border: 0;
   text-transform: uppercase;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .6);
   transition: color 250ms;
 }
 
@@ -82,6 +79,8 @@
 }
 
 .inf {
+  color: #00b8ff;
+  font-size: large;
   display: block;
   margin: 0 auto;
 }

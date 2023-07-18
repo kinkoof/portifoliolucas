@@ -1,13 +1,16 @@
 img {
+
     flex: auto;
-    padding-left: 9vw;
-    padding-right: 3vw;
+    border-radius: 3%;
+    margin-left: 9vw;
+    margin-right: 3vw;
     height: 20vw;
     width: 19vw;
 }
 
 .divall {
     display: flex;
+    align-items: center;
 
 }
 
@@ -16,7 +19,7 @@ img {
     padding-right: 5vw;
     flex: auto;
     border-radius: 1vw;
-    background-image: linear-gradient(to bottom, #9600ff, #00b8ff, #00fff9);
+    background-color: #222222;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,7 +30,7 @@ hr {
     margin-top: -2vw;
     height: 2px;
     border: 0;
-    background-color: aliceblue;
+    background-color: #ff00c1;
 }
 
 

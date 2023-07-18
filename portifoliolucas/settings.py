@@ -127,9 +127,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'todo'
 
-# LOGOUT_REDIRECT_URL ='/accounts/login'
+LOGOUT_REDIRECT_URL ='login'
 
 
 # Default primary key field type

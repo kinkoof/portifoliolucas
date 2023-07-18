@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #bec8d1;
 }
 
 header {
@@ -15,7 +15,6 @@ header {
 
 .bemvindo {
 
-  color: #00fffb;
   text-align: center;
   font-size: 5vw;
   padding-left: 3vw;
@@ -24,12 +23,13 @@ header {
 
 .bemvindo,
 .bemvindo::after {
+
   padding: 10px 50px;
   font-size: 3vw;
   border: none;
   border-radius: 5px;
-  color: #00fffb;
-  text-shadow: 2px 2px 0px #E94BE8;
+  color: #00b8ff;
+  text-shadow: 2px 2px 0px #ff00c1, 10px 10px 10px rgba(0, 0, 0, .6);
   background-color: transparent;
   position: relative;
 }
@@ -61,7 +61,8 @@ header {
 }
 
 .bemvindo:hover {
-  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+  
+  text-shadow: 2px 2px 0px #E94BE8, 10px 10px 10px rgba(0, 0, 0, .6);;
 }
 
 @keyframes glitch_4011 {
@@ -139,13 +140,14 @@ a {
 }
 
 .btn {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .6);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 10px 30px;
   transition: 0.5s;
   position: relative;
   font-size: 17px;
-  background: #00fffb;
+  background: #00b8ff;
   border: none;
   color: #ffffff;
 }
@@ -153,8 +155,8 @@ a {
 .btn:hover {
   letter-spacing: 0.25em;
   background: #00fffb;
-  color: #E94BE8;
-  box-shadow: 0 0 45px #00fffb;
+  color: #ff00c1;
+  box-shadow: 0 0 30px #00fffb;
 }
 
 .btn::before {
@@ -165,6 +167,7 @@ a {
 }
 
 .btn span {
+
   position: relative;
   z-index: 1;
 }
@@ -175,36 +178,12 @@ a {
   display: block;
 }
 
-.btn i::before {
-  content: '';
-  position: absolute;
-  border: 2px solid #00fffb;
-  width: 7px;
-  height: 4px;
-  top: -3.5px;
-  left: 80%;
-  background: #222222;
-  transform: translateX(-50%);
-  transition: 0.5s;
-}
 
 .btn:hover i::before {
   width: 20px;
   left: 20%;
 }
 
-.btn i::after {
-  content: '';
-  position: absolute;
-  border: 2px solid #00fffb;
-  width: 7px;
-  height: 4px;
-  bottom: -3.5px;
-  left: 20%;
-  background: #222222;
-  transform: translateX(-50%);
-  transition: 0.5s;
-}
 
 .btn:hover i::after {
   width: 20px;

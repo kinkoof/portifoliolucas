@@ -8,10 +8,10 @@
 <h1 style="color: aliceblue;">lista de conteudos</h1>
 
 {% if user.is_authenticated %}
-<button><a href="/accounts/logout">deslogar</a></button>
+<button><a href="{% url 'login' %}">deslogar</a></button>
 
 {% else %}
-    <button><a href="/usuarios/cadastro" >entrar / criar conta</a></button>
+    <button><a href="{% url 'login' %}" >entrar / criar conta</a></button>
 
 {% endif %}
 <style>

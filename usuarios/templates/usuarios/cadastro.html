@@ -4,13 +4,15 @@
 
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/projeto.css' %}">
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
+
         <div class="item">
             <form action="{% url 'cadastro' %}" method="POST">
+
                 {% csrf_token %}
                     <input type="text" placeholder="Username" name="nome">
                     <br>
@@ -19,12 +21,13 @@
                     <input type="password" placeholder="Senha" name="senha">
                     <br>
                     <input type="submit" value="cadastrar">
-                    <br>
+                    
             </form>
                 
 
         </div>
     </div>
+
 </div>
 
 
