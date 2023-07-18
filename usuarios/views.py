@@ -1,7 +1,8 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect 
+from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 #parte do cadastro
 def Cadastro(request):
@@ -15,12 +16,13 @@ def Cadastro(request):
         user = User.objects.filter(username = nome).first()
 
         if user:
-            return HttpResponse("ja existe um usuario com esse nome")
+            return HttpResponseRedirect('/usuarios/cadastro')
+
 
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
 
-        return HttpResponse("usuario cadastrado com sucesso")
+        return HttpResponseRedirect('/usuarios/login')
 
 def Login(request):
     
@@ -36,8 +38,13 @@ def Login(request):
         if user:
             login(request, user)
 
-            return HttpResponse("autenticado")
+            return HttpResponseRedirect('/todo')
 
         else:
-            return HttpResponse('usuario ou senha invalidos')
+            return messages.success('usuario ou senha invalidos')
               
+
+def Sair(request):
+    logout(request)
+
+    
