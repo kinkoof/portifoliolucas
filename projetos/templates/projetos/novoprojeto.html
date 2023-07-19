@@ -14,7 +14,16 @@
             <hr>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
+
+                <div class="titulo">
+                    <label>Titulo:</label> 
+
+                    {{ form.titulo}}
+
+                </div>
+                
+                {{ form.descriçao.label_tag }}
+                {{ form.descriçao }}
                 <input type="submit" value="Criar Tarefa">
             </form>
         </div>

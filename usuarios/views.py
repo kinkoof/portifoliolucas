@@ -47,4 +47,5 @@ def Login(request):
 def Sair(request):
     logout(request)
 
+    return HttpResponseRedirect('/usuarios/login')
     
