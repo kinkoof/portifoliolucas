@@ -1,6 +1,6 @@
 {% extends 'home/main.html' %}
 {% load static %}
-{% block title%} NOVO PROJETO {% endblock %}
+{% block title%} NOVA TAREFA {% endblock %}
 
 
 {% block content %}
@@ -8,7 +8,7 @@
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar">
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar">
                 < </a>
         </div>
         <div class="item">
@@ -27,7 +27,14 @@
 
                 {{ form.descriçao.label_tag }}
                 {{ form.descriçao }}
-                <input type="submit" value="Adicionar projeto">
+                <input type="submit" value="Criar Tarefa">
+
+
+                <div class="escolha">
+                    <label> Estado: </label>
+
+                    {{form.status}}
+                </div>
             </form>
         </div>
     </div>

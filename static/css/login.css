@@ -89,6 +89,7 @@
 }
 
 .voltar-box {
+  cursor: pointer;
   margin: 1vw;
   display: inline-block;
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
@@ -159,5 +160,5 @@
 }
 
 .email{
-  
+
 }

@@ -5,7 +5,7 @@ from django.db import models
 STATUS = (
     ('fazendo', 'Fazendo'),
     ('feito', 'Feito'),
-    ('fazer', 'Fazer') 
+    ('fazer', 'Fazer')
     )
 
 class Projeto(models.Model):
@@ -20,4 +20,3 @@ class Projeto(models.Model):
     def __str__(self):
         return self.titulo
 
-    

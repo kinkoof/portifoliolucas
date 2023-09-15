@@ -77,7 +77,7 @@
 }
 
 .item {
-  
+
   text-transform: capitalize;
   padding: 2vw;
   margin-bottom: -2.5vw;
@@ -169,4 +169,10 @@ hr{
   padding: 0;
   list-style: none;
   background-color: #2d8cf0;
+}
+
+.div-btn{
+  padding-top: 3vw;
+  text-align: right;
+  padding-right: 2vw;
 }

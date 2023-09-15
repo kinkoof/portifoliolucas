@@ -8,11 +8,11 @@
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar"> < </a></div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
         <div class="item">
-            <span><a href="#">{{projeto.titulo}}</a></span>
+            <span><a href="#">{{tarefa.titulo}}</a></span>
             <hr>
-            <p class="descricao">{{projeto.descriçao}}</p>
+            <p class="descricao">{{tarefa.descriçao}}</p>
         </div>
 
         <div class="div-btn">
@@ -20,13 +20,13 @@
 
                 <a href="edit/{{projeto.id}}">
                     <button class="btn">
-                        <span >editar projeto</span><i></i>
+                        <span >editar tarefa</span><i></i>
                     </button>
                 </a>
 
                 <a href="{excluir/{{projeto.id}}}">
                     <button class="btn">
-                        <span >excluir projeto</span><i></i>
+                        <span >excluir tarefa</span><i></i>
                     </button>
                 </a>
 

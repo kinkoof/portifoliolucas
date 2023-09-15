@@ -1,0 +1,154 @@
+.center-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista {
+    margin-top: 3vw;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: fit-content;
+    width: 90%;
+    padding-bottom: 3vw;
+    --border-color: linear-gradient(-60deg, #ff00c1, #9600ff, #4900ff, #00b8ff, #00fff9);
+    --border-width: .3em;
+    --curve-size: .0em;
+    --blur: 30px;
+    --bg: #222222;
+    --color: #afffff;
+    color: var(--color);
+    /* use position: relative; so that BG is only for .lista */
+    position: relative;
+    isolation: isolate;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    transition: color 250ms;
+}
+
+.lista::after,
+.lista::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.lista::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+}
+
+.lista::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+            /* Top-left */
+            var(--border-width) calc(var(--curve-size) + var(--border-width) * .5),
+
+            calc(var(--border-width) * .5) var(--border-width),
+
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+            /* bottom-right 1 */
+            calc(100% - calc(var(--border-width) * .5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+}
+
+.tipo {
+    border-bottom: 1px solid #ccc;
+    margin: auto;
+    padding: auto;
+    font-size: 3vw;
+    color: #7e03aa;
+    text-shadow: red 0 -1px
+}
+
+
+.backlog {
+    height: fit-content;
+    display: inline-block;
+    width: 25%;
+    margin: 3vw;
+    border: 1px solid #ccc;
+}
+
+
+.todo {
+    height: fit-content;
+    display: inline-block;
+    width: 25%;
+    margin: 3vw;
+    border: 1px solid #ccc;
+
+}
+
+.doing {
+    height: fit-content;
+    display: inline-block;
+    width: 25%;
+    margin: 3vw;
+    border: 1px solid #ccc;
+
+}
+
+.done {
+    height: fit-content;
+    display: inline-block;
+    width: 25%;
+    margin: 3vw;
+    border: 1px solid #ccc;
+}
+
+.div-btn {
+    text-align:right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+}
+
+.div-btn-sujes {
+    text-align:right;
+    position: absolute;
+    bottom: 0;
+    right: 1;
+    padding-left: 2vw;
+    padding-bottom: 2vw;
+}
+
+.div-tit{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 2px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.573);
+}
+
+.sujestao{
+    padding-left: 5vw;
+}

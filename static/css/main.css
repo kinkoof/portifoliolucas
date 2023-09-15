@@ -140,6 +140,7 @@ a {
 }
 
 .btn {
+
   box-shadow: 10px 10px 10px rgba(0, 0, 0, .6);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -153,7 +154,7 @@ a {
 }
 
 .btn:hover {
-  letter-spacing: 0.25em;
+  cursor: pointer;
   background: #00fffb;
   color: #ff00c1;
   box-shadow: 0 0 30px #00fffb;
@@ -178,14 +179,3 @@ a {
   display: block;
 }
 
-
-.btn:hover i::before {
-  width: 20px;
-  left: 20%;
-}
-
-
-.btn:hover i::after {
-  width: 20px;
-  left: 80%;
-}

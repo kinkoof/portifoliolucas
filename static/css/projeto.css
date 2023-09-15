@@ -6,7 +6,7 @@
 }
 
 .lista {
-  height: 10vw;
+  height: auto;
   width: 90%;
   padding-bottom: 3vw;
   --border-color: linear-gradient(-60deg, #ff00c1, #9600ff, #4900ff, #00b8ff, #00fff9);
@@ -173,4 +173,10 @@ a:hover {
       /* bottom-right 2 */
       var(--border-width) calc(100% - var(--border-width)));
   transition: clip-path 500ms;
+}
+
+
+.div-btn{
+  text-align: right;
+  padding-right: 2vw;
 }

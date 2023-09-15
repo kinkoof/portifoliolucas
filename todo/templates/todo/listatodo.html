@@ -1,0 +1,131 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block title%} To Do {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+
+
+<div class="center-lista">
+    <div class="lista">
+
+        <div class="backlog">
+            <p class="tipo">backlog</p>
+            {% for tarefa in tarefas %}
+            {% if tarefa.status == 'backlog'%}
+            <div class="div-tit">
+                <p>{{tarefa.titulo}}</p>
+            </div>
+            {% endif %}
+            {% endfor%}
+
+        </div>
+
+        <div class="todo">
+            <p class="tipo">todo</p>
+            {% for tarefa in tarefas %}
+            {% if tarefa.status == 'to do'%}
+
+            <div class="div-tit">
+                <p>{{tarefa.titulo}}</p>
+            </div>
+
+            {% endif %}
+            {% endfor%}
+
+        </div>
+
+        <div class="doing">
+            <p class="tipo">doing</p>
+            {% for tarefa in tarefas %}
+            {% if tarefa.status == 'doing'%}
+
+            <div class="div-tit">
+                <p>{{tarefa.titulo}}</p>
+            </div>
+
+            {% endif %}
+            {% endfor%}
+        </div>
+
+        <div class="done">
+            <p class="tipo">done</p>
+            {% for tarefa in tarefas %}
+            {% if tarefa.status == 'done'%}
+
+            <div class="div-tit">
+                <p>{{tarefa.titulo}}</p>
+            </div>
+
+            {% endif %}
+            {% endfor%}
+        </div>
+
+        {% if user.is_superuser %}
+        <div class="div-btn">
+            <a href="novatarefa/">
+                <button class="btn">
+                    <span>+ Adicionar Projeto</span><i></i>
+                </button>
+            </a>
+        </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <div class="div-btn-sujes">
+            <a href="{% url 'sair' %}">
+                <button class="btn">
+                    <span>DEIXAR SUJESTÃO</span><i></i>
+                </button>
+            </a>
+        </div>
+        {%endif%}
+
+
+
+    </div>
+</div>
+{% if user.is_authenticated %}
+
+<div class="div-btn">
+    <a href="{% url 'sair' %}">
+        <button class="btn">
+            <span>SAIR</span><i></i>
+        </button>
+    </a>
+</div>
+
+
+{% else %}
+
+<p class="sujestao">* Entre ou crie sua conta para deixar sujestões</p>
+<div class="div-btn">
+    <a href="{% url 'login' %}">
+        <button class="btn">
+            <span>ENTRAR / CRIAR CONTA</span><i></i>
+        </button>
+    </a>
+</div>
+
+{% endif %}
+
+
+<style>
+    .bemvindo::after {
+        --move1: inset(50% 50% 50% 50%);
+        --move2: inset(31% 0 40% 0);
+        --move3: inset(39% 0 15% 0);
+        --move4: inset(45% 0 40% 0);
+        --move5: inset(45% 0 6% 0);
+        --move6: inset(14% 0 61% 0);
+        clip-path: var(--move1);
+        content: 'TO DO';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+    }
+</style>
+{% endblock content %}

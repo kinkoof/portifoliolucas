@@ -73,22 +73,26 @@
     transition: clip-path 500ms;
 }
 
-.item { 
+.item {
     text-transform: capitalize;
     font-size: xx-large;
     padding: 1.7vw;
+
+
 
 
 }
 
 
 .voltar {
+
     padding: 1.3vw;
     font-size: xx-large;
 
 }
 
 .voltar-box {
+    cursor: pointer;
     margin: 1vw;
     display: inline-block;
     --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
