@@ -26,3 +26,12 @@ def novaTarefa(request):
 def viewTarefa(request, id):
     tarefa = get_object_or_404(Todo, pk=id)
     return render(request, 'todo/tarefa.html', {'tarefa': tarefa})
+
+def editTarefa(request, id):
+    tarefa = get_object_or_404(Todo, pk=id)
+    form = TodoForm(instance=tarefa)
+
+    if(request.metod == 'POST'):
+        return False
+    else:
+        return render(request, "todo/edittarefa.html", { 'form' : form, 'nome_pagina' : 'TAREFAS', 'tarefa' : tarefa} )
