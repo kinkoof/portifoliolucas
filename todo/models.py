@@ -13,7 +13,7 @@ class Todo(models.Model):
 
     titulo = models.CharField(max_length=255)
     descriçao = models.TextField(verbose_name='descrição')
-    status = models.CharField(max_length=10, choices=STATUS)
+    status = models.CharField(max_length=10, choices=STATUS, default='backlog')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 

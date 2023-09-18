@@ -27,14 +27,17 @@
 
                 {{ form.descriçao.label_tag }}
                 {{ form.descriçao }}
+
+                <div class="escolha" style="display: none;">
+                    <label> Estado: </label>
+                    {{form.status}}
+
+                </div>
                 <input type="submit" value="Criar Tarefa">
 
 
-                <div class="escolha">
-                    <label> Estado: </label>
 
-                    {{form.status}}
-                </div>
+
             </form>
         </div>
     </div>

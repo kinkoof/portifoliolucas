@@ -1,6 +1,6 @@
 {% extends 'home/main.html' %}
 {% load static %}
-{% block title%} NOVO PROJETO {% endblock %}
+{% block title%} {{tarefa.titulo}} {% endblock %}
 
 
 {% block content %}
@@ -8,26 +8,16 @@
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar">
-< </a>
-        </div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
         <div class="item">
-            <span>adicione um novo projeto:</span>
+            <span>Editando {{tarefa.titulo}}</span>
             <hr>
             <form method="POST">
                 {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Editar Tarefa">
+                <a href="excluir/{{tarefa.id}}"><input type="submit" value="Excluir Tarefa"></a>
 
-                <div class="titulo">
-                    <label>Titulo:</label>
-
-                    {{ form.titulo}}
-
-                </div>
-
-
-                {{ form.descriçao.label_tag }}
-                {{ form.descriçao }}
-                <input type="submit" value="Adicionar projeto">
             </form>
         </div>
     </div>

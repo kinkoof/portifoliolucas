@@ -128,7 +128,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    padding-right: 2vw;
+    padding-right: 3vw;
     padding-bottom: 2vw;
 }
 
@@ -136,8 +136,8 @@
     text-align:right;
     position: absolute;
     bottom: 0;
-    right: 1;
-    padding-left: 2vw;
+    right: 0;
+    padding-right: 3vw;
     padding-bottom: 2vw;
 }
 
@@ -149,6 +149,18 @@
     background-color: rgba(0, 0, 0, 0.573);
 }
 
+.div-oculta{
+    display: none;
+}
+
 .sujestao{
     padding-left: 5vw;
+}
+
+.expanded{
+    height: fit-content;
+}
+
+hr{
+   width: 70%;
 }

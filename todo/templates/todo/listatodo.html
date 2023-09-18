@@ -4,6 +4,7 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+<script src="{% static 'js/listatodo.js' %}"></script>
 
 
 <div class="center-lista">
@@ -13,9 +14,17 @@
             <p class="tipo">backlog</p>
             {% for tarefa in tarefas %}
             {% if tarefa.status == 'backlog'%}
-            <div class="div-tit">
+            <div class="div-tit" id="div-expand" onclick="expand(this)">
                 <p>{{tarefa.titulo}}</p>
+                <div class="div-oculta">
+                    <hr>
+                    <p>{{tarefa.descriçao}}</p>
+                    {% if user.is_superuser%}
+                    <a href="edit/{{tarefa.id}}">editar</a>
+                    {% endif %}
+                </div>
             </div>
+
             {% endif %}
             {% endfor%}
 
@@ -26,8 +35,15 @@
             {% for tarefa in tarefas %}
             {% if tarefa.status == 'to do'%}
 
-            <div class="div-tit">
+            <div class="div-tit" id="div-expand" onclick="expand(this)">
                 <p>{{tarefa.titulo}}</p>
+                <div class="div-oculta">
+                    <hr>
+                    <p>{{tarefa.descriçao}}</p>
+                    {% if user.is_superuser%}
+                    <a href="edit/{{tarefa.id}}">editar</a>
+                    {% endif %}
+                </div>
             </div>
 
             {% endif %}
@@ -40,8 +56,15 @@
             {% for tarefa in tarefas %}
             {% if tarefa.status == 'doing'%}
 
-            <div class="div-tit">
+            <div class="div-tit" id="div-expand" onclick="expand(this)">
                 <p>{{tarefa.titulo}}</p>
+                <div class="div-oculta">
+                    <hr>
+                    <p>{{tarefa.descriçao}}</p>
+                    {% if user.is_superuser%}
+                    <a href="edit/{{tarefa.id}}">editar</a>
+                    {% endif %}
+                </div>
             </div>
 
             {% endif %}
@@ -53,27 +76,27 @@
             {% for tarefa in tarefas %}
             {% if tarefa.status == 'done'%}
 
-            <div class="div-tit">
+            <div class="div-tit" id="div-expand" onclick="expand(this)">
                 <p>{{tarefa.titulo}}</p>
+                <div class="div-oculta">
+                    <hr>
+                    <p>{{tarefa.descriçao}}</p>
+                    {% if user.is_superuser%}
+                    <a href="edit/{{tarefa.id}}">editar</a>
+                    {% endif %}
+                </div>
             </div>
 
             {% endif %}
             {% endfor%}
         </div>
 
-        {% if user.is_superuser %}
-        <div class="div-btn">
-            <a href="novatarefa/">
-                <button class="btn">
-                    <span>+ Adicionar Projeto</span><i></i>
-                </button>
-            </a>
-        </div>
-        {% endif %}
+
+
 
         {% if user.is_authenticated %}
         <div class="div-btn-sujes">
-            <a href="{% url 'sair' %}">
+            <a href="novatarefa/">
                 <button class="btn">
                     <span>DEIXAR SUJESTÃO</span><i></i>
                 </button>
@@ -95,12 +118,11 @@
     </a>
 </div>
 
-
 {% else %}
 
 <p class="sujestao">* Entre ou crie sua conta para deixar sujestões</p>
 <div class="div-btn">
-    <a href="{% url 'login' %}">
+    <a href=" {% url 'login' %}">
         <button class="btn">
             <span>ENTRAR / CRIAR CONTA</span><i></i>
         </button>
