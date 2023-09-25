@@ -8,22 +8,28 @@
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar">
+                < </a>
+        </div>
 
         <div class="item">
             <form action="{% url 'cadastro' %}" method="POST">
 
                 {% csrf_token %}
-                    <input type="text" placeholder="Username" name="nome">
-                    <br>
-                    <input type="email" placeholder="Email" name="email">
-                    <br>
-                    <input type="password" placeholder="Senha" name="senha">
-                    <br>
-                    <input type="submit" value="cadastrar">
-                    
+                <input type="text" placeholder="Username" name="nome">
+                <br>
+                <input type="email" placeholder="Email" name="email">
+                <br>
+                <input type="password" placeholder="Senha" name="senha">
+                <br>
+                <input type="submit" value="cadastrar">
+
             </form>
-                
+
+            <div>
+                <a href="{% url 'login' %}"><button>fazer login </button></a>
+            </div>
+
 
         </div>
     </div>

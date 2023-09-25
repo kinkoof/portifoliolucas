@@ -8,3 +8,8 @@ class TodoForm(forms.ModelForm):
 
         model = Todo
         fields = ('titulo', 'descriçao', 'status')
+        widgets = {
+            'titulo': forms.TextInput(attrs={'placeholder': 'Digite o título aqui'}),
+            'descriçao': forms.Textarea(attrs={'placeholder': 'Descreva a sujestão'}),
+
+        }

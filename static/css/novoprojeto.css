@@ -1,4 +1,5 @@
 .center-lista {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,6 +7,8 @@
 }
 
 .lista {
+  height: fit-content;
+  width: fit-content;
   display: inline-block;
   padding-bottom: 3vw;
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
@@ -173,11 +176,72 @@ a:hover {
 }
 
 
-.titulo{
-  display: flex;
+.titulo {
+  text-align: center;
+  display: block;
 
 }
 
+
+
 .titulo input {
-  
+  min-width: 80%;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: .4s;
+}
+
+.titulo input::placeholder{
+  color: #000000d1;
+}
+
+
+.descriçao {
+  padding-top: 2vw;
+  text-align: center;
+
+}
+
+
+.descriçao textarea {
+  min-width: 80%;
+  height: 200px;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  transition: .4s;
+
+}
+
+.descriçao textarea::placeholder{
+  color: #000000d1;
+}
+
+input:hover {
+  box-shadow: 0 0 0 .15vw #00b8ff;
+}
+
+input:focus {
+  box-shadow: 0 0 0 .15vw #b70089;
+}
+
+textarea:hover {
+  box-shadow: 0 0 0 .15vw #00b8ff;
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 .15vw #b70089;
+}
+
+.div_btn {
+  padding-top: 2vw;
+  text-align: right;
 }

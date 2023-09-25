@@ -6,6 +6,7 @@
 }
 
 .lista {
+  width: 25%;
   padding-bottom: 3vw;
   --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
   --border-width: .2em;
@@ -159,6 +160,32 @@
   transition: clip-path 500ms;
 }
 
-.email{
+.input {
+  text-align: center;
+  display: block;
 
+}
+
+.input input {
+  min-width: 80%;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: .4s;
+}
+
+.input input::placeholder{
+  color: #000000d1;
+}
+
+input:hover {
+  box-shadow: 0 0 0 .15vw #00b8ff;
+}
+
+input:focus {
+  box-shadow: 0 0 0 .15vw #b70089;
 }

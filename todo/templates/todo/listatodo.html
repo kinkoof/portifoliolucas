@@ -21,6 +21,8 @@
                     <p>{{tarefa.descriçao}}</p>
                     {% if user.is_superuser%}
                     <a href="edit/{{tarefa.id}}">editar</a>
+                    
+                    <a onclick="confirmDelete({{tarefa.id}})">excluir</a>
                     {% endif %}
                 </div>
             </div>
@@ -42,6 +44,7 @@
                     <p>{{tarefa.descriçao}}</p>
                     {% if user.is_superuser%}
                     <a href="edit/{{tarefa.id}}">editar</a>
+                    <a href="excluir/{{tarefa.id}}">excluir</a>
                     {% endif %}
                 </div>
             </div>
@@ -63,6 +66,7 @@
                     <p>{{tarefa.descriçao}}</p>
                     {% if user.is_superuser%}
                     <a href="edit/{{tarefa.id}}">editar</a>
+                    <a href="excluir/{{tarefa.id}}">excluir</a>
                     {% endif %}
                 </div>
             </div>
@@ -83,6 +87,8 @@
                     <p>{{tarefa.descriçao}}</p>
                     {% if user.is_superuser%}
                     <a href="edit/{{tarefa.id}}">editar</a>
+
+                    <a href="excluir/{{tarefa.id}}">excluir</a>
                     {% endif %}
                 </div>
             </div>

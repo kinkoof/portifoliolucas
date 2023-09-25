@@ -176,3 +176,11 @@ hr{
   text-align: right;
   padding-right: 2vw;
 }
+
+.pagination{
+  text-align: center;
+}
+
+.step{
+  font-size: large;
+}

@@ -26,20 +26,27 @@
         </div>
         {% endif %}
 
+
+        <div class="pagination">
+            <span class="step">
+                {% if projetos.has_previous %}
+                    <a href=" ?page={{projetos.previous_page_number }}"> < </a>
+                {% endif %}
+
+                <span class="curent">
+                    {{ projetos.number}} de {{projetos.paginator.num_pages}}
+                </span>
+
+                {% if projetos.has_next %}
+                    <a href=" ?page={{projetos.next_page_number }}"> > </a>
+                {% endif %}
+            </span>
+        </div>
     </div>
 </div>
 
 
 
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li>{{message}}</li>
-
-    {% endfor %}
-</ul>
-{% endif %}
 
 
 

@@ -9,7 +9,7 @@
 <div class="center-lista">
     <div class="lista">
         <div class="voltar-box"><a href="{% url 'projetos' %}" class="voltar">
-< </a>
+                < </a>
         </div>
         <div class="item">
             <span>adicione um novo projeto:</span>
@@ -18,16 +18,17 @@
                 {% csrf_token %}
 
                 <div class="titulo">
-                    <label>Titulo:</label>
-
-                    {{ form.titulo}}
-
+                    {{ form.titulo }}
                 </div>
 
-
-                {{ form.descriçao.label_tag }}
-                {{ form.descriçao }}
-                <input type="submit" value="Adicionar projeto">
+                <div class="descriçao">
+                    {{ form.descriçao }}
+                </div>
+                <div class="div_btn">
+                    <button type="submit" class="btn">
+                        <span>Adicionar Projeto</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

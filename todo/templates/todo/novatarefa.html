@@ -12,32 +12,23 @@
                 < </a>
         </div>
         <div class="item">
-            <span>adicione um novo projeto:</span>
+            <span>deixe uma sujestão aqui:</span>
             <hr>
             <form method="POST">
                 {% csrf_token %}
 
                 <div class="titulo">
-                    <label>Titulo:</label>
-
-                    {{ form.titulo}}
-
+                    {{ form.titulo }}
                 </div>
 
-
-                {{ form.descriçao.label_tag }}
-                {{ form.descriçao }}
-
-                <div class="escolha" style="display: none;">
-                    <label> Estado: </label>
-                    {{form.status}}
-
+                <div class="descriçao">
+                    {{ form.descriçao }}
                 </div>
-                <input type="submit" value="Criar Tarefa">
-
-
-
-
+                <div class="div_btn">
+                    <button type="submit" class="btn">
+                        <span>Adicionar sujestão</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>

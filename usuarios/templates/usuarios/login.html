@@ -8,18 +8,24 @@
 
 <div class="center-lista">
     <div class="lista">
-        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar"> < </a></div>
+        <div class="voltar-box"><a href="{% url 'todo' %}" class="voltar">
+                < </a>
+        </div>
         <div class="item">
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
 
+                <div class="input">
                     <input type="text" placeholder="Usuario" name="nome">
-                    <br>
+                </div>
+
+                <div class="input">
                     <input type="password" placeholder="Senha" name="senha">
-                    <br>
-                    <input type="submit" value="login">
-                    <br>
-                    <li>{{message}}</li>
+                </div>
+
+                <input type="submit" value="login">
+                <br>
+                <li>{{message}}</li>
 
             </form>
             <div>
@@ -29,7 +35,7 @@
         </div>
     </div>
 
-    
+
 
 </div>
 
