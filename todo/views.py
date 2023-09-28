@@ -20,7 +20,8 @@ def novaTarefa(request):
             return redirect('/todo')
     else:
         form = TodoForm()
-        return render(request, "todo/novatarefa.html", {'form': form, 'nome_pagina': 'TAREFAS'})
+
+    return render(request, "todo/novatarefa.html", {'form': form, 'nome_pagina': 'TAREFAS'})
 
 
 def viewTarefa(request, id):

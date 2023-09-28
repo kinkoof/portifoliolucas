@@ -54,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 ROOT_URLCONF = "portifoliolucas.urls"
 
@@ -136,3 +137,8 @@ LOGOUT_REDIRECT_URL ='login'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTHENTICATION_BACKENDS = [
+    'usuarios.utils.EmailBackend',  # Substitua 'myapp' pelo nome do seu aplicativo
+    'django.contrib.auth.backends.ModelBackend',
+]
